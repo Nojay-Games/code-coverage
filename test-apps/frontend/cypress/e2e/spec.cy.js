@@ -13,7 +13,7 @@ context('Page test', () => {
     })
   })
 
-  it('logs names', function() {
+  it('logs names', function () {
     cy.get('@log')
       .should('have.been.calledOnce')
       .should('have.been.calledWith', 'just names', ['joe', 'mary'])
@@ -36,4 +36,10 @@ context('Unit tests', () => {
     expect(add('foo', 'Bar')).to.equal('fooBar')
   })
 
+})
+
+context('Test cross-origin ', () => {
+  it('Visit not baseUrl page', () => {
+    cy.visit('https://google.com')
+  })
 })

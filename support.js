@@ -75,7 +75,7 @@ const registerHooks = () => {
       }
 
       // if application code has been instrumented, the app iframe "window" has an object
-      const applicationSourceCoverage = win.__coverage__
+      const applicationSourceCoverage = win?.__coverage__
       if (!applicationSourceCoverage) {
         return
       }
